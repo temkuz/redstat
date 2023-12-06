@@ -4,6 +4,7 @@ redstat
 # Content
 
 - [Description](#description)
+- [Install](#install)
 - [Usage](#usage)
     - [Download module](#download-module)
         - [Help](#default-help)
@@ -19,6 +20,12 @@ redstat
 # Description
 
 Tools for working with reddit data without api
+
+# Install
+
+```commandline
+pip install redstat
+```
 
 # Usage
 

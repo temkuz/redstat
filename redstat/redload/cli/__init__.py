@@ -1,12 +1,14 @@
 from argparse import ArgumentParser
 from sys import argv
 
-from redstat.cli.download.subreddit import register_post_parser
-from redstat.cli.download.user import register_user_parser
+from redstat.redload.cli.subreddit import register_post_parser
+from redstat.redload.cli.user import register_user_parser
+
+from redstat.redload.variables.cli import CLI_DESCRIPTION
 
 
-def parse_download_args():
-    default_parser = ArgumentParser()
+def parse_args():
+    default_parser = ArgumentParser(description=CLI_DESCRIPTION)
     subparser = default_parser.add_subparsers()
 
     register_subparsers(subparser)

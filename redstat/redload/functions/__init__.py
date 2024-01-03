@@ -1,9 +1,9 @@
-from .download import download_data
-from .format import format_url, format_file
-from .save import save_json
+from redstat.redload.functions.download import download_data
+from redstat.redload.functions.format import format_url, format_file
+from redstat.redload.functions.save import save_json
 
 
-def run_download_process(namespace):
+def download_statistic(namespace):
     resource_name = namespace.name
     resource_url_dict = namespace.url_dict
     resource_type = namespace.type

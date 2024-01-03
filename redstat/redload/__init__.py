@@ -1,8 +1,8 @@
-from redstat.cli import parse_download_args
+from redstat.redload.cli import parse_args
 
 
-def run_download_process():
-    namespace = parse_download_args()
+def main():
+    namespace = parse_args()
 
     if namespace.func is None:
         raise Exception(f'Invalid input {namespace}')

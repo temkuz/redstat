@@ -1,6 +1,6 @@
 from typing import Any, Generator
 
-from redstat.variables.download.session import SESSION
+from redstat.redload.variables.session import SESSION
 
 
 def download_data(url: str) -> Generator[Any, Any, None]:

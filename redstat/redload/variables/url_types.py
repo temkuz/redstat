@@ -1,4 +1,4 @@
-from redstat.variables.download import url
+from redstat.redload.variables import url
 
 USER_URL_TYPES = {
     'all': url.USER_BASE_URL,

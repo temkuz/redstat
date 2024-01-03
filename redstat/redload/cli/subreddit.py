@@ -1,8 +1,8 @@
 from argparse import ArgumentParser
 
 from .arguments import optional, positional
-from redstat.cli.download.defaults import register_function_default
-from redstat.variables.download.url_types import SUBREDDIT_URL_TYPES
+from redstat.redload.cli.defaults import register_function_default
+from redstat.redload.variables.url_types import SUBREDDIT_URL_TYPES
 
 
 def register_post_parser(subparser):

@@ -1,6 +1,6 @@
 from requests import Session
 
-from redstat.variables.application import APPLICATION_AUTHOR, APPLICATION_NAME, APPLICATION_VERSION
+from redstat.redload.variables.application import APPLICATION_AUTHOR, APPLICATION_NAME, APPLICATION_VERSION
 
 BASE_HEADER = {
     'user-agent': f'{APPLICATION_NAME} {APPLICATION_VERSION} {APPLICATION_AUTHOR}'

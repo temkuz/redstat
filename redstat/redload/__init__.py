@@ -1,6 +1,8 @@
-from redstat.redload.cli import parse_args
+from asyncio import run
 
+from .cli import parse_args
 from .functions.validate import validate
+from .functions import download
 
 
 def main():
@@ -10,4 +12,4 @@ def main():
     if namespace.verbose:
         print(namespace)
 
-    namespace.func(namespace)
+    run(download(namespace))

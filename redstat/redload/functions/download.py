@@ -1,19 +1,20 @@
-from typing import Any, Generator
-
-from redstat.redload.variables.session import SESSION
+from aiohttp import ClientSession
 
 
-def download_statistic(url: str) -> Generator[Any, Any, None]:
+async def _get_children(session: ClientSession, url: str, params: dict) -> tuple[list, str | None]:
+    async with session.get(url, params=params) as response:
+        json_response = await response.json()
+        json_data = json_response['data']
+    return [child['data'] for child in json_data['children']], json_data['after']
+
+
+async def download_statistic(session: ClientSession, url: str) -> list:
     params = {'limit': 100}
+    result = []
     while True:
-        response = SESSION.get(url, params=params)
-        response.raise_for_status()
-        json_response = response.json().get('data')
-
-        for child in json_response.get('children'):
-            yield child.get('data')
-
-        after = json_response.get('after')
+        children, after = await _get_children(session, url, params)
+        result.extend(children)
         if after is None:
             break
         params['after'] = after
+    return result
